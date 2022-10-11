@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IgnoreDiagnostics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>ViridorKPMG_BPSuppressions</Name>
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>BestPractices</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Table/VRDProjectMappingTable/TableIndex/PrimaryIdx/TableIndexField/InventLocationId</Path>
+      <Moniker>BPErrorTablePrimaryKeyNotMandatory</Moniker>
+      <Justification>The locationId can be blank but should not allow duplicates</Justification>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>BestPractices</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Table/VRDInventoryTransferJournalStaging/TableIndex/StagingIdx/TableIndexField/JournalNumber</Path>
+      <Moniker>BPErrorTablePrimaryKeyNotMandatory</Moniker>
+      <Justification>The journal number can be blank but should not allow duplicates</Justification>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>BestPractices</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Table/VRDProjectMappingTableStaging/TableIndex/StagingIdx/TableIndexField/InventLocationId</Path>
+      <Moniker>BPErrorTablePrimaryKeyNotMandatory</Moniker>
+      <Justification>The locationId can be blank but should not allow duplicates</Justification>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>BestPractices</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Table/VRDProjectItemJournalStaging/TableIndex/StagingIdx/TableIndexField/JournalId</Path>
+      <Moniker>BPErrorTablePrimaryKeyNotMandatory</Moniker>
+      <Justification>The journalId can be blank but should not allow duplicates</Justification>
+    </Diagnostic>
+  </Items>
+</IgnoreDiagnostics>
