@@ -1,0 +1,60 @@
+/// <summary>
+///    Extension of <c>ProjValCheckTrans</c> class
+/// </summary>
+[ExtensionOf(classStr(ProjValCheckTrans))]
+public final class ProjValCheckTransVRD_Extension
+{
+    /// <summary>
+    ///    Set the variables from the buffer
+    /// </summary>
+    /// <param name="_args">
+    ///		The args.
+    /// </param>
+    /// <param name="_childBuffer">
+    ///		The buffer.
+    /// </param>
+    public void setVariablesFromBuffer(Args _args, Common _childBuffer)
+    {
+        TableId tableId = _args.dataset();
+        Common buffer   = _args.record();
+
+        next setVariablesFromBuffer(_args, _childBuffer);
+
+        switch (tableId)
+        {
+            case    tableNum(VRDProjectMappingTable):
+                VRDProjectMappingTable projectMappingTable = buffer as VRDProjectMappingTable;
+                projId              = projectMappingTable.ProjId;
+                categoryId          = projectMappingTable.ProjCategoryId;
+                categoryType        = ProjCategoryType::Item;
+                this.checkResourceCategory(false);
+                this.checkResourceProj(false);
+                break;
+        }
+    }
+
+    /// <summary>
+    ///    check the buffer
+    /// </summary>
+    /// <param name="_args">
+    ///		The args.
+    /// </param>
+    /// <return>
+    ///		True, it buffer can be checked
+	/// </return>
+    public boolean checkBuffer(Args _args)
+    {
+        TableId tableId = _args.dataset();
+
+        boolean ret = next checkBuffer(_args);
+
+        switch (tableId)
+        {
+            case    tableNum(VRDProjectMappingTable):
+                return true;
+        }
+
+        return ret;
+	}
+
+}
